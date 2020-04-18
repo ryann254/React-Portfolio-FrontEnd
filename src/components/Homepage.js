@@ -1,6 +1,4 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
-import Github from "../../public/images/icons/github-icon-dark.svg";
 
 function Homepage() {
   return (
