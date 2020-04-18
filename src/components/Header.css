@@ -34,7 +34,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.8;
+  opacity: 0.95;
   visibility: hidden;
 }
 .menu.show {
@@ -89,7 +89,9 @@
 .menu .nav-item.show {
   transform: translate3d(0, 0, 0);
 }
-.menu .nav-item.current > a {
+
+/* Set color the current link */
+.nav-item.current > a {
   color: #f5603b;
 }
 .menu .nav-link {
