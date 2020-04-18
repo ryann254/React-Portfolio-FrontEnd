@@ -7,7 +7,7 @@ function Contact() {
         <h1 class="lg-heading">
           <span class="text-secondary">Contact</span> Me
         </h1>
-        <h2 class="sm-heading">How to reach me....</h2>
+        <h2 class="sm-heading">How to reach me...</h2>
         <div class="boxes">
           <div>
             <span class="text-secondary">Email:</span> keddelyronjoz@gmail.com
