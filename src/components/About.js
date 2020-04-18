@@ -9,7 +9,7 @@ function About() {
         <h1 className="lg-heading">
           <span className="text-secondary">About</span> Me
         </h1>
-        <h2 className="sm-heading">Let me mention just a few....</h2>
+        <h2 className="sm-heading">Let me mention just a few...</h2>
         <div className="about-info">
           <div className="image-bio">
             <img src={ProfilePic} alt="" className="bio-image" />
