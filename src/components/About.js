@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import ProfilePic from "../../public/images/Profile-Pic-Two-Croped.jpg";
+import ProfilePic from "../../public/images/Profile-Pic-Two-Croped-min.jpg";
 import "./About.css";
 
 function About() {
@@ -9,7 +9,7 @@ function About() {
         <h1 className="lg-heading">
           <span className="text-secondary">About</span> Me
         </h1>
-        <h2 className="sm-heading">Let me mention just a few....</h2>
+        <h2 className="sm-heading">Let me mention just a few...</h2>
         <div className="about-info">
           <div className="image-bio">
             <img src={ProfilePic} alt="" className="bio-image" />

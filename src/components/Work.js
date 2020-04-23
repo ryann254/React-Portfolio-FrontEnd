@@ -1,11 +1,11 @@
 import React from "react";
 
 // Own Components
-import Image1 from "../../public/images/projects/Estimatorapp.png";
-import Image2 from "../../public/images/projects/Expenseapp.png";
-import Image3 from "../../public/images/projects/Fancyform.png";
-import Image4 from "../../public/images/projects/Netflix.png";
-import Image5 from "../../public/images/projects/Homefurniture.png";
+import Image1 from "../../public/images/projects/Estimatorapp-min.png";
+import Image2 from "../../public/images/projects/Expenseapp-min.png";
+import Image3 from "../../public/images/projects/Fancyform-min.png";
+import Image4 from "../../public/images/projects/Netflix-min.png";
+import Image5 from "../../public/images/projects/Homefurniture-min.png";
 
 function Work() {
   return (
