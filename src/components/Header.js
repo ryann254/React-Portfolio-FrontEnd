@@ -1,10 +1,15 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { useRouteMatch } from "react-router-dom";
+
 import "./Header.css";
+import MenuPic from "../../public/images/Profile-Pic-One-Croped-min.jpg";
 
 function Header({ children }) {
-  const [target, setTarget] = useState("");
+  const { url } = useRouteMatch();
+
+  const [nav, setNav] = useState("");
   const [showMenu, setShowMenu] = useState(false);
   const [menuBtn, setMenuBtn] = useState(null);
   const [menuNav, setMenuNav] = useState(null);
@@ -19,6 +24,7 @@ function Header({ children }) {
     let menuNav = document.querySelector(".menu-nav");
     let menuBranding = document.querySelector(".menu-branding");
     let navItems = document.querySelectorAll(".nav-item");
+    setNav(navItems);
     setMenuBtn(menuBtn);
     setMenu(menu);
     setMenuNav(menuNav);
@@ -26,10 +32,38 @@ function Header({ children }) {
     setNavItem(navItems);
   }, []);
 
-  //Adds the current class to the right link
-  function setCurrent(e) {
-    const link = e.currentTarget;
-    setTarget(link);
+  // Removes the current class
+  function removeCurrent() {
+    Array.from(nav).forEach((navItem) => {
+      navItem.classList.remove("current");
+    });
+  }
+
+  // Adds the current class to the right link
+  if (url.charAt(1) === "a") {
+    removeCurrent();
+    let about = document.getElementById("about");
+    if (about !== null) {
+      about.classList.add("current");
+    }
+  } else if (url.charAt(1) === "w") {
+    removeCurrent();
+    let work = document.getElementById("work");
+    if (work !== null) {
+      work.classList.add("current");
+    }
+  } else if (url.charAt(1) === "c") {
+    removeCurrent();
+    let contact = document.getElementById("contact");
+    if (contact !== null) {
+      contact.classList.add("current");
+    }
+  } else {
+    removeCurrent();
+    let home = document.getElementById("home");
+    if (home !== null) {
+      home.classList.add("current");
+    }
   }
 
   //Closes the menu on moving to a different page
@@ -47,13 +81,6 @@ function Header({ children }) {
   //Open and Closes the menu
   const toggleMenu = () => {
     if (!showMenu) {
-      const linkElements = document.querySelectorAll(".nav-item");
-      linkElements.forEach((item) => {
-        item.classList.remove("current");
-      });
-      if (target !== "") {
-        target.classList.add("current");
-      }
       menuBtn.classList.add("close");
       menu.classList.add("show");
       menuNav.classList.add("show");
@@ -79,20 +106,16 @@ function Header({ children }) {
         <nav className="menu">
           <div className="menu-branding">
             <div>
-              <img
-                src="/images/Profile-Pic-One-Croped.jpg"
-                className="portrait"
-                alt=""
-              />
+              <img src={MenuPic} className="portrait" alt="" />
             </div>
           </div>
           <ul className="menu-nav">
-            <li className="nav-item" onClick={(e) => setCurrent(e)}>
+            <li id="home" className="nav-item">
               <Link to="/" className="nav-link" onClick={() => handleClose()}>
                 Home
               </Link>
             </li>
-            <li className="nav-item" onClick={(e) => setCurrent(e)}>
+            <li id="about" className="nav-item">
               <Link
                 to="/about"
                 className="nav-link"
@@ -101,7 +124,7 @@ function Header({ children }) {
                 About Me
               </Link>
             </li>
-            <li className="nav-item" onClick={(e) => setCurrent(e)}>
+            <li id="work" className="nav-item">
               <Link
                 to="/work"
                 className="nav-link"
@@ -110,7 +133,7 @@ function Header({ children }) {
                 My Work
               </Link>
             </li>
-            <li className="nav-item" onClick={(e) => setCurrent(e)}>
+            <li id="contact" className="nav-item">
               <Link
                 to="/contact"
                 className="nav-link"

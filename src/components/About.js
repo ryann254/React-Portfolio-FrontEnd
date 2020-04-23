@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import ProfilePic from "../../public/images/Profile-Pic-Two-Croped.jpg";
+import ProfilePic from "../../public/images/Profile-Pic-Two-Croped-min.jpg";
 import "./About.css";
 
 function About() {
