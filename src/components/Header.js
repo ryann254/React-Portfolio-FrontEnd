@@ -110,6 +110,7 @@ function Header({ children }) {
 
   //Closes the menu on moving to a different page
   function handleClose() {
+    removeLeftSide();
     setShowMenu(false);
     menuBtn.classList.remove("close");
     menu.classList.remove("show");
@@ -135,7 +136,6 @@ function Header({ children }) {
         setShowMenu(true);
       }
     } else {
-      removeLeftSide();
       handleClose();
     }
   };
