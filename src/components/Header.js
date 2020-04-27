@@ -24,7 +24,7 @@ function Header({ children }) {
   //On component mount the following should be fetched and set to state
   useEffect(() => {
     let menuBtn = document.querySelector(".menu-btn");
-    let btn = document.getElementById("line1");
+    let btn1 = document.getElementById("line1");
     let btn2 = document.getElementById("line2");
     let btn3 = document.getElementById("line3");
     let menu = document.querySelector(".menu");
@@ -32,7 +32,7 @@ function Header({ children }) {
     let menuBranding = document.querySelector(".menu-branding");
     let navItems = document.querySelectorAll(".nav-item");
     const btnArray = [];
-    btnArray.push(btn, btn2, btn3);
+    btnArray.push(btn1, btn2, btn3);
     setBtnLines(btnArray);
     setNav(navItems);
     setMenuBtn(menuBtn);
@@ -136,7 +136,6 @@ function Header({ children }) {
         setShowMenu(true);
       }
     } else {
-      removeLeftSide();
       handleClose();
     }
   };
