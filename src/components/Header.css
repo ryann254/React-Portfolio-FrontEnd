@@ -14,18 +14,24 @@
   margin: 0 0 5px 0;
   transition: all 0.5s ease-out;
 }
+
+/* Changes the menu color for the add events page */
+.btn-line.add-events {
+  background: #333 !important;
+}
+
 .menu-btn.close {
   transform: rotate(180deg);
 }
 .menu-btn.close .btn-line:nth-child(1) {
-  background: red;
+  background: red !important;
   transform: rotate(45deg) translate(5px, 5px);
 }
 .menu-btn.close .btn-line:nth-child(2) {
   opacity: 0;
 }
 .menu-btn.close .btn-line:nth-child(3) {
-  background: red;
+  background: red !important;
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
@@ -43,6 +49,7 @@
 /* Shows the content of the menu */
 .menu-branding,
 .menu-nav {
+  z-index: 10;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -123,4 +130,12 @@
 
 .nav-item:nth-child(4) {
   transition-delay: 0.4s;
+}
+
+.nav-item:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.nav-item:nth-child(6) {
+  transition-delay: 0.5s;
 }

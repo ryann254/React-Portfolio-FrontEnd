@@ -1,8 +1,16 @@
 import React, { Fragment } from "react";
+import { useSelector } from "react-redux";
+
 import ProfilePic from "../../public/images/Profile-Pic-Two-Croped-min.jpg";
 import "./About.css";
 
 function About() {
+  const workEducationData = useSelector(
+    (state) => state.work.workEducationData
+  );
+  const eventsAchievements = useSelector(
+    (state) => state.work.eventsAchievements
+  );
   return (
     <Fragment>
       <main id="about">
@@ -59,92 +67,30 @@ function About() {
           </div>
           <h2 className="sm-heading work">Work and Education</h2>
           <div className="work-education">
-            <div className="job">
-              <h3>Intern at Softsearch(2020-)</h3>
-              <h4>Front-End Developer</h4>
-              <p>
-                As of January 23rd 2020, I started my internship at Softsearch
-                Limited, a software development and consultancy start-up.At
-                Softsearch I work with another front-end developer to develop
-                and deliver well designed and optimized websites. We are
-                currently working on product to ease transportation of bulky
-                goods to and fro a place.
-              </p>
-            </div>
-
-            <div className="job">
-              <h3>JKUAT(2017-2021)</h3>
-              <h4>Degree</h4>
-              <p>
-                I'm also still studying at Jomo Kenyatta University of
-                Agriculture and Technology, taking Bachelor of Science
-                Innovation and Technology Management. I graduate in 2021.
-              </p>
-            </div>
-
-            <div className="job">
-              <h3>Upperhill Secondary School(2013-2016)</h3>
-              <h6>Kcse Certificate</h6>
-              <p>I did my highschool studies at Upperhill school</p>
-            </div>
+            {workEducationData !== ""
+              ? workEducationData.map((item, index) => (
+                  <div className="job" key={index}>
+                    <h3>{item.title}</h3>
+                    <h4>{item.subtitle}</h4>
+                    <p>{item.content}</p>
+                  </div>
+                ))
+              : console.log("Loading")}
           </div>
-
           <div className="headings">
             <h2 className="sm-heading work">Events and Achievements</h2>
           </div>
 
           <div className="work-education">
-            <div className="job">
-              <h3>SDG Challenge(2020)</h3>
-              <h4>Facebook</h4>
-              <p>
-                On April 2020, I applied to a challenge by Facebook and got
-                in.The first challenge given to us, was to make a function that
-                receives data about the corona virus e.g. no. of people
-                infected,hospital beds available in the region and give out an
-                estimate how many more people will be infected given the current
-                rate of infections and whether or not the hospital beds will be
-                enough.
-              </p>
-            </div>
-            <div className="job">
-              <h3>Andela Learning Community</h3>
-              <h4>Finalists</h4>
-              <p>
-                Between the months of September and December in 2019, I enrolled
-                in another programmed called ALC. It's sponsored by google and
-                is aimed at equiping young talented Africans with skills in
-                Mobile-Web, Android and Cloud Technologies. I went with the
-                Mobile-Web track and learnt how to make websites that are not
-                only pleasing but also optimized and have high performance.
-                Another important skill I acquired is making a website
-                accessible and user friendly to anyone
-              </p>
-            </div>
-            <div className="job">
-              <h3>Huawei Training at Huawei Technologies Kenya(2019)</h3>
-              <h4>Huawei Certificate</h4>
-              <p>
-                In June 2019, I went for a two week bootcamp at Huawei's main
-                offices, the training was about a new platform the planned to
-                avail, namely OWS. It's a cloud platform that they hope will
-                large and small businesses to grow with technology more, they
-                are also using it themselves in their day to day activities. The
-                program ended and we did our official exams in July and gor our
-                certificates in August
-              </p>
-            </div>
-            <div className="job">
-              <h3>Rotaract Club of JKUAT(2019-)</h3>
-              <h4>Clubs and Societies</h4>
-              <p>
-                I'm also an active member of Rotaract club, our main agenda is
-                to mostly make the society and environment around us a better
-                place. We go for activities like taking clothes to children's
-                home, cleaning up the environment, painting primary schools that
-                are near us.
-              </p>
-            </div>
+            {eventsAchievements !== ""
+              ? eventsAchievements.map((item, index) => (
+                  <div className="job" key={index}>
+                    <h3>{item.title}</h3>
+                    <h4>{item.subtitle}</h4>
+                    <p>{item.content}</p>
+                  </div>
+                ))
+              : console.log("Loading")}
           </div>
         </div>
       </main>

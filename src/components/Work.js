@@ -21,7 +21,7 @@ function Work() {
               href="https://ryann254.github.io/Ryan-Covid19-Deploy/"
               target="_blank"
             >
-              <img src={Image1} alt="Project" />
+              <img src={Image1} className="covid-19" alt="Project" />
             </a>
             <a
               href="https://ryann254.github.io/Ryan-Covid19-Deploy/"
@@ -45,7 +45,7 @@ function Work() {
               href="https://expense-tracker-frontend-001.herokuapp.com/"
               target="_blank"
             >
-              <img src={Image2} alt="Project" />
+              <img src={Image2} className="expense-tracker" alt="Project" />
             </a>
             <a
               href="https://expense-tracker-frontend-001.herokuapp.com/"
@@ -66,7 +66,7 @@ function Work() {
 
           <div className="item">
             <a href="https://ryanfancyform.cf/" target="_blank">
-              <img src={Image3} alt="Project" />
+              <img src={Image3} className="fancy-form" alt="Project" />
             </a>
             <a
               href="https://ryanfancyform.cf/"
@@ -87,7 +87,7 @@ function Work() {
 
           <div className="item">
             <a href="https://tender-fermi-f8c720.netlify.app/" target="_blank">
-              <img src={Image4} alt="Project" />
+              <img src={Image4} className="netflix-image" alt="Project" />
             </a>
             <a
               href="https://tender-fermi-f8c720.netlify.app/"
@@ -108,7 +108,7 @@ function Work() {
 
           <div className="item">
             <a href="https://ryanphotography.cf/" target="_blank">
-              <img style={{ height: "191px" }} src={Image5} alt="Project" />
+              <img className="photography" src={Image5} alt="Project" />
             </a>
             <a
               href="https://ryanphotography.cf/"

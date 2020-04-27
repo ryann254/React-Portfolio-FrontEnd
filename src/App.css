@@ -82,7 +82,7 @@ main .icons a:hover {
 .btn-dark,
 .btn-light {
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   margin-right: -5px;
   border: 0;
   margin-bottom: 0.4rem;
@@ -140,10 +140,25 @@ main .icons a:hover {
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
+  .covid-19,
+  .expense-tracker,
+  .fancy-form,
+  .netflix-image,
+  .photography {
+    height: 160px;
+  }
 }
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
     grid-template-columns: repeat(3, 1fr);
+    width: 120%;
+  }
+  .covid-19,
+  .expense-tracker,
+  .fancy-form,
+  .netflix-image,
+  .photography {
+    height: 160px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -166,12 +181,15 @@ main .icons a:hover {
     transform: translate3d(0, 0, 0);
   }
   ul.menu-nav {
-    height: 67vh;
+    height: 75vh;
     transform: translate3d(-100%, 0, 0);
     font-size: 24px;
   }
+  .menu-nav-position {
+    margin-top: -90px;
+  }
   div.menu-branding {
-    height: 33vh;
+    height: 25vh;
     transform: translate3d(100%, 0, 0);
   }
   div.menu-branding .portrait {
@@ -195,6 +213,13 @@ main .icons a:hover {
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
+  .netflix-image {
+    height: 120px;
+  }
+
+  .photography {
+    height: 140px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -209,5 +234,79 @@ main .icons a:hover {
   }
   .boxes div:hover {
     padding: 0.3rem 1rem;
+  }
+}
+
+/* Loader */
+.loader-wrapper {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #141e30, #243b55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #fff;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+
+  25% {
+    height: 0%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  75% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
   }
 }
