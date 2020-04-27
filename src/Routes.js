@@ -3,7 +3,14 @@ import { BrowserRouter, Switch } from "react-router-dom";
 
 //Own Components
 import { RoutesWithLayout } from "./RoutesWithLayout";
-import { Header, Homepage, About, Work, Contact } from "./components";
+import {
+  Header,
+  Homepage,
+  About,
+  Work,
+  Contact,
+  AddEvents,
+} from "./components";
 
 export default () => (
   <BrowserRouter>
@@ -11,6 +18,12 @@ export default () => (
       <RoutesWithLayout path="/" exact layout={Header} component={Homepage} />
       <RoutesWithLayout path="/about" exact layout={Header} component={About} />
       <RoutesWithLayout path="/work" exact layout={Header} component={Work} />
+      <RoutesWithLayout
+        path="/add-events"
+        exact
+        layout={Header}
+        component={AddEvents}
+      />
       <RoutesWithLayout
         path="/contact"
         exact
