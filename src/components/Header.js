@@ -136,7 +136,6 @@ function Header({ children }) {
         setShowMenu(true);
       }
     } else {
-      removeLeftSide();
       handleClose();
     }
   };
