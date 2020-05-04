@@ -49,6 +49,7 @@
 /* Shows the content of the menu */
 .menu-branding,
 .menu-nav {
+  position: relative;
   z-index: 10;
   display: flex;
   flex-flow: column wrap;
@@ -63,12 +64,13 @@
 .menu-nav {
   margin: 0;
   padding: 0;
-  background: #686060;
+  background: #2c3e50;
   list-style: none;
   transform: translate3d(0, -100%, 0);
   transition: all 0.5s ease-out;
 }
 .menu-nav.show {
+  z-index: 15;
   transform: translate3d(0, 0, 0);
 }
 /* Reveals the content of menu branding e.g Potrait picture */

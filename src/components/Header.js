@@ -6,12 +6,10 @@ import { useDispatch } from "react-redux";
 
 import "./Header.css";
 import MenuPic from "../../public/images/Profile-Pic-One-Croped-min.jpg";
-import { removeLeft } from "../redux/action-creator";
 
 function Header({ children }) {
   const { url } = useRouteMatch();
 
-  const dispatch = useDispatch();
   const [nav, setNav] = useState("");
   const [showMenu, setShowMenu] = useState(false);
   const [menuBtn, setMenuBtn] = useState(null);
@@ -65,11 +63,6 @@ function Header({ children }) {
     });
   }
 
-  //Removes the opacity of the left side of the Add events page on click of the menu
-  function removeLeftSide() {
-    dispatch(removeLeft());
-  }
-
   // Adds the current class to the right link
   if (url.charAt(2) === "b") {
     removeMenuColorChange();
@@ -110,7 +103,6 @@ function Header({ children }) {
 
   //Closes the menu on moving to a different page
   function handleClose() {
-    removeLeftSide();
     setShowMenu(false);
     menuBtn.classList.remove("close");
     menu.classList.remove("show");
@@ -124,7 +116,6 @@ function Header({ children }) {
   //Open and Closes the menu
   const toggleMenu = () => {
     if (!showMenu) {
-      removeLeftSide();
       if (menuBtn !== null) {
         menuBtn.classList.add("close");
         menu.classList.add("show");

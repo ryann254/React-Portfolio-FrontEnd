@@ -7,7 +7,6 @@ import {
 
 const initialState = {
   eventORWorkStatus: false,
-  leftSideStatus: false,
   workEducationData: [
     {
       title: "Intern at Softsearch(2020-)",
@@ -55,7 +54,7 @@ const initialState = {
   ],
 };
 
-function WorkReducer(state = initialState, action) {
+function AboutReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_WORK_EDUCATION:
       return {
@@ -72,14 +71,9 @@ function WorkReducer(state = initialState, action) {
         ...state,
         eventORWorkStatus: !state.eventORWorkStatus,
       };
-    case REMOVE_LEFT_SIDE:
-      return {
-        ...state,
-        leftSideStatus: !state.leftSideStatus,
-      };
     default:
       return state;
   }
 }
 
-export default WorkReducer;
+export default AboutReducer;
