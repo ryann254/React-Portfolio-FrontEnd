@@ -4,6 +4,7 @@ import {
   ADD_WORK_EDUCATION,
   EVENT_OR_WORK_ADDED,
   ADD_EVENT_ACHIEVEMENTS,
+  SCROLL_TO_ELEMENT,
 } from "../action-types";
 
 function* addWorkSaga(action) {
@@ -11,10 +12,16 @@ function* addWorkSaga(action) {
   const data = action.payload;
   if (data !== "") {
     yield put({ type: EVENT_OR_WORK_ADDED });
+    let scrollData = {
+      state: true,
+      section: data.radio,
+    };
     if (data.radio === "work") {
       yield put({ type: ADD_WORK_EDUCATION, payload: data });
+      yield put({ type: SCROLL_TO_ELEMENT, payload: scrollData });
     } else {
       yield put({ type: ADD_EVENT_ACHIEVEMENTS, payload: data });
+      yield put({ type: SCROLL_TO_ELEMENT, payload: scrollData });
     }
   }
   // this will be used to make an api call to the backend

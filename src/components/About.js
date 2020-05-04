@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Bounce, Zoom } from "react-reveal";
 
@@ -6,12 +6,32 @@ import ProfilePic from "../../public/images/Profile-Pic-Two-Croped-min.jpg";
 import "./About.css";
 
 function About() {
-  const workEducationData = useSelector(
-    (state) => state.about.workEducationData
-  );
-  const eventsAchievements = useSelector(
-    (state) => state.about.eventsAchievements
-  );
+  const {
+    workEducationData,
+    eventsAchievements,
+    scrollToElement,
+  } = useSelector((state) => state.about);
+
+  function scrollFunction(id) {
+    let offsetTop = document.getElementById(`${id}`).offsetTop;
+    window.scrollTo({
+      top: offsetTop + 130,
+      behavior: "smooth",
+    });
+  }
+
+  useEffect(() => {
+    if (scrollToElement.state === true) {
+      if (
+        scrollToElement.section !== "" &&
+        scrollToElement.section === "work"
+      ) {
+        scrollFunction("work-section");
+      } else {
+        scrollFunction("events-section");
+      }
+    }
+  }, [scrollToElement]);
   return (
     <Fragment>
       <main id="about">
@@ -70,7 +90,7 @@ function About() {
           </div>
           <h2 className="sm-heading work">Work and Education</h2>
           <Zoom>
-            <div className="work-education">
+            <div className="work-education" id="work-section">
               {workEducationData !== ""
                 ? workEducationData.map((item, index) => (
                     <div className="job" key={index}>
@@ -86,7 +106,7 @@ function About() {
             <h2 className="sm-heading work">Events and Achievements</h2>
           </div>
           <Zoom>
-            <div className="work-education">
+            <div className="work-education" id="events-section">
               {eventsAchievements !== ""
                 ? eventsAchievements.map((item, index) => (
                     <div className="job" key={index}>
