@@ -1,28 +1,31 @@
 import React from "react";
+import { Bounce } from "react-reveal";
 
 function Contact() {
   return (
-    <div>
+    <div className="contact-body">
       <main id="contact">
         <h1 className="lg-heading">
           <span className="text-secondary">Contact</span> Me
         </h1>
         <h2 className="sm-heading">How to reach me...</h2>
-        <div className="boxes">
-          <div>
-            <span className="text-secondary">Email:</span>{" "}
-            keddelyronjoz@gmail.com
-          </div>
+        <Bounce left>
+          <div className="boxes">
+            <div>
+              <span className="text-secondary">Email:</span>{" "}
+              keddelyronjoz@gmail.com
+            </div>
 
-          <div>
-            <span className="text-secondary">Phone:</span> (+254) 796867328
-          </div>
+            <div>
+              <span className="text-secondary">Phone:</span> (+254) 796867328
+            </div>
 
-          <div>
-            <span className="text-secondary">Address:</span>
-            Roysambu, Nairobi
+            <div>
+              <span className="text-secondary">Address:</span>
+              Roysambu, Nairobi
+            </div>
           </div>
-        </div>
+        </Bounce>
       </main>
 
       <footer id="main-footer">Copyright &copy; 2020</footer>

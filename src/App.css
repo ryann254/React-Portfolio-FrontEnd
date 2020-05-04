@@ -16,7 +16,7 @@ body:after {
   right: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -3;
   background: rgba(117, 108, 108, 0.6);
 }
 
@@ -65,10 +65,13 @@ main .icons a:hover {
 
 /* My Work Page */
 .projects {
+  position: relative;
+  z-index: -1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0.9rem;
 }
+
 .projects img {
   width: 100%;
   border: 3px #fff solid;
@@ -106,7 +109,14 @@ main .icons a:hover {
   color: #333;
 }
 
+.contact-body {
+  position: absolute;
+  z-index: -1;
+}
+
 .boxes {
+  position: relative;
+  z-index: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -239,7 +249,7 @@ main .icons a:hover {
 
 /* Loader */
 .loader-wrapper {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
