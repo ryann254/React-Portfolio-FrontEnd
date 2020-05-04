@@ -2,10 +2,11 @@ import {
   ADD_WORK_EDUCATION,
   ADD_EVENT_ACHIEVEMENTS,
   EVENT_OR_WORK_ADDED,
-  REMOVE_LEFT_SIDE,
+  SCROLL_TO_ELEMENT,
 } from "../action-types";
 
 const initialState = {
+  scrollToElement: { state: false, section: "" },
   eventORWorkStatus: false,
   workEducationData: [
     {
@@ -70,6 +71,11 @@ function AboutReducer(state = initialState, action) {
       return {
         ...state,
         eventORWorkStatus: !state.eventORWorkStatus,
+      };
+    case SCROLL_TO_ELEMENT:
+      return {
+        ...state,
+        scrollToElement: action.payload,
       };
     default:
       return state;
