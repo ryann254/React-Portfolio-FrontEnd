@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an old duplicate of the `Portfolio-refactored` repository.
 
 ## Available Scripts
 
