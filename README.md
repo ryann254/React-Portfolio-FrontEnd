@@ -1,4 +1,4 @@
-This project is an old duplicate of the `Portfolio-refactored` repository.
+This project is an old duplicate of the [Portfolio-refactored](https://github.com/ryann254/Portfolio-refactored) repository. The site is hosted at https://old-portfolio-ryan.netlify.app/
 
 ## Available Scripts
 
